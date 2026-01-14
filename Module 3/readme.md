@@ -91,8 +91,6 @@ imshow(img, [min max])
 % [] causes automatic scaling to min and max values
 ```
 
-**(Additional examples follow similar structure)**
-
 ---
 
 ## FUNCTION 3: figure
@@ -114,7 +112,6 @@ figure(n)
 % Creates a new figure window and displays an image
 ```
 
-**(Additional examples follow similar structure)**
 
 ---
 
@@ -136,7 +133,6 @@ impixelinfo
 % Shows (column, row) and intensity value as cursor moves
 ```
 
-**(Additional examples follow similar structure)**
 
 ---
 
@@ -159,8 +155,6 @@ gray_img = rgb2gray(rgb_img)
 >> imshow(gcat);
 % Converts color cat image to grayscale
 ```
-
-**(Additional examples follow similar structure)**
 
 ---
 
@@ -185,8 +179,6 @@ ans =
     319   323
 % Returns 319 rows and 323 columns
 ```
-
-**(Additional examples follow similar structure)**
 
 ---
 
@@ -215,8 +207,6 @@ info =
     ColorType: 'truecolor'
 ```
 
-**(Additional examples follow similar structure)**
-
 ---
 
 ## FUNCTION 8: double
@@ -237,8 +227,6 @@ double_img = double(img)
 >> whos img d_img
 % Shows img is uint8, d_img is double
 ```
-
-**(Additional examples follow similar structure)**
 
 ---
 
@@ -262,8 +250,6 @@ a: 1x1 double array (8 bytes)
 b: 1x1 uint8 array (1 byte)
 % Converts and reduces memory usage
 ```
-
-**(Additional examples follow similar structure)**
 
 ---
 
@@ -311,8 +297,6 @@ gray_img = ind2gray(X, map)
 % Converts indexed image with colormap to grayscale
 ```
 
-**(Additional examples follow similar structure)**
-
 ---
 
 ## FUNCTION 12: gray2ind
@@ -335,8 +319,6 @@ gray_img = ind2gray(X, map)
 % Converts to indexed with 64 gray levels (default)
 ```
 
-**(Additional examples follow similar structure)**
-
 ---
 
 ## FUNCTION 13: rgb2ind
@@ -357,8 +339,6 @@ gray_img = ind2gray(X, map)
 >> imshow(X, map);
 % Creates indexed image with 64 colors
 ```
-
-**(Additional examples follow similar structure)**
 
 ---
 
@@ -384,8 +364,6 @@ ans = 480  640  3
 % Converts from 2D to 3D array
 ```
 
-**(Additional examples follow similar structure)**
-
 ---
 
 ## FUNCTION 15: ind2rgb
@@ -406,8 +384,6 @@ rgb_img = ind2rgb(X, map)
 >> imshow(rgb_img);
 % Converts indexed to RGB format
 ```
-
-**(Additional examples follow similar structure)**
 
 ---
 
@@ -431,8 +407,6 @@ resized = imresize(img, [rows cols])
 >> figure; imshow(small); title('50% Size');
 % Creates image with half the dimensions
 ```
-
-**(Additional examples follow similar structure)**
 
 ---
 
