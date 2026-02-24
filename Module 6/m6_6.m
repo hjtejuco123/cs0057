@@ -24,30 +24,30 @@ title('Noisy Image 2 (Before Averaging)');
 avg10 = mean(stack10, 3);
 
 % Display the averaged image (after averaging)
-% figure;
-% imshow(avg10, []);
-% title('Average of 10 Noisy Images (After Averaging)');
+figure;
+imshow(avg10, []);
+title('Average of 10 Noisy Images (After Averaging)');
 
 
-% stack50 = zeros(s(1), s(2), 50);
-% for i = 1:50
-%     stack50(:,:,i) = imnoise(t,'gaussian',0,0.005);
-% end
-% avg50 = mean(stack50,3);
-% figure; imshow(avg50,[]); title('Average of 50 noisy images');
+stack50 = zeros(s(1), s(2), 50);
+for i = 1:50
+    stack50(:,:,i) = imnoise(t,'gaussian',0,0.005);
+end
+avg50 = mean(stack50,3);
+figure; imshow(avg50,[]); title('Average of 50 noisy images');
+
 % 
 % 
-% 
-% a3 = fspecial('average');
-% f3 = filter2(a3, t_ga);
-% figure; imshow(uint8(f3)); title('Gaussian cleaned by 3x3 averaging');
-% 
-% 
-% a5 = fspecial('average',[5,5]);
-% f5 = filter2(a5, t_ga);
-% figure; imshow(uint8(f5)); title('Gaussian cleaned by 5x5 averaging');
+a3 = fspecial('average');
+f3 = filter2(a3, t);
+figure; imshow(uint8(f3)); title('Gaussian cleaned by 3x3 averaging');
 % 
 % 
+a5 = fspecial('average',[5,5]);
+f5 = filter2(a5, t);
+figure; imshow(uint8(f5)); title('Gaussian cleaned by 5x5 averaging');
+
 % 
-% w7 = wiener2(t_ga,[7,7]);
-% figure; imshow(w7); title('Gaussian cleaned by Wiener 7x7');
+% 
+w7 = wiener2(t,[7,7]);
+figure; imshow(w7); title('Gaussian cleaned by Wiener 7x7');
