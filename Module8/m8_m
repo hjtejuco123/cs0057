@@ -1,0 +1,69 @@
+clc;
+clear;
+close all;
+
+img = imread('mypeppers.tif');
+figure, imshow(img), title('Original Color Image');
+
+
+% r = img(:,:,1);
+% g = img(:,:,2);
+% b = img(:,:,3); 
+% 
+% figure, imshow(r), title('Red Channel');
+% figure, imshow(g), title('Green Channel');
+% figure, imshow(b), title('Blue Channel');
+
+% hsv_img = rgb2hsv(img);
+% h = hsv_img(:,:,1);
+% s = hsv_img(:,:,2);
+% v = hsv_img(:,:,3);
+% 
+% figure 
+% subplot(1,3,1), imshow(h), title ("Hue");
+% subplot(1,3,2), imshow(s), title("Saturation");
+% subplot(1,3,3), imshow(v), title("Value");
+% 
+% 
+% rgb_back = hsv2rgb(hsv_img);
+% figure, imshow(img), title('Back to original color Image');
+
+%RGB - YIQ 
+% Convert RGB to YIQ
+% yiq_img = rgb2ntsc(img);
+% y = yiq_img(:,:,1); %luminance (brightness)
+% i = yiq_img(:,:,2); %Chrominance (orange-blue)
+% q = yiq_img(:,:,3); %Chrominance (purple-green)
+% 
+% % Display the YIQ channels
+% figure 
+% subplot(1,3,1), imshow(y), title("Luminance (Y)");
+% subplot(1,3,2), imshow(i), title("Chrominance I (orange-blue)");
+% subplot(1,3,3), imshow(q), title("Chrominance Q (purple-green)");
+
+
+%RGB - YCBCr
+
+% Convert RGB to YCbCr
+% ycbcr_img = rgb2ycbcr(img);
+% y = ycbcr_img(:,:,1); % Luminance
+% cb = ycbcr_img(:,:,2); % Chrominance Blue (chroma)
+% cr = ycbcr_img(:,:,3); % Chrominance Red (chroma)
+% 
+% figure 
+% subplot(1,3,1), imshow(y), title("Luminance (Y)");
+% subplot(1,3,2), imshow(cb), title("Chrominance Cb (blue)");
+% subplot(1,3,3), imshow(cr), title("Chrominance Cr (red)");
+
+%image Filtering
+f = fspecial("average",[5 5]);
+% filteredImg = imfilter(img, f);
+% figure, imshow(filteredImg), title('Filtered Image');
+
+%Filtering HSV value channel
+hsv_img = rgb2hsv(img);
+hsv_img(:,:,3) = imfilter(hsv_img(:,:,3),f);
+% hsv_img(:,:,3) = imgaussfilt(hsv_img(:,:,3), 2); % Apply Gaussian filter to the Value channel
+% filteredHsvImg = hsv_img; % Store the filtered HSV image
+filteredHsvImg = hsv2rgb(hsv_img);
+figure, imshow(filteredHsvImg), title('Filtered Image in HSV');
